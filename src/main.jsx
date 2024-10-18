@@ -4,9 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import store from './store.js'
+import ContextProvider  from './ContextProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
-  
-     <App />
+  <Provider store={store}>
+   <ContextProvider  >
+      <App />
+   </ContextProvider>
+  </Provider>
   
 )

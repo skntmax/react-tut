@@ -9,6 +9,8 @@ import C2 from './C1';
 import C3 from './C1';
 import C4 from './C1';
 import Wrapper from './Wrapper';
+import { useDispatch, useSelector } from 'react-redux';
+import { increment } from './slice';
 
 export  const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -24,16 +26,20 @@ export  const Item = styled(Paper)(({ theme }) => ({
 
 
 function App() {
+  let dispatch  = useDispatch()
+  let obj  = useSelector(ele=>ele.counter)
+
+  console.log(obj)
   return (
      <>
 
+    <button onClick={ ()=> dispatch(increment())} > rerender </button>
       <div className='d-flex justify-content-center align-items-center border ' style={{width:"100vw" , height:"100vh" }}>
 
-    <button> reload all the components</button>
-    
       <Grid container spacing={2} >
       <Grid item xs={6} >  
          <C1 cmp="cmp1" />
+         
       </Grid>
 
       <Grid item xs={6}>

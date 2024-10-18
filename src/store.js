@@ -4,7 +4,7 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 
 const store =  configureStore({
   reducer:{
-     counter:counterSlice.reducer
+     counter: counterSlice.reducer
   }
 })
 
